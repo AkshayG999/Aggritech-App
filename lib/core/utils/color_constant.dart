@@ -32,6 +32,8 @@ class ColorConstant {
 
   static Color whiteA700 = fromHex('#ffffff');
 
+  static Color blueGray900 = fromHex('#2c2c2c');
+
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();
     if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');

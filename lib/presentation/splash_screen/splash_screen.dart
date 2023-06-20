@@ -45,7 +45,7 @@ class SplashScreen extends StatelessWidget {
                         "Om Trading Company",
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
-                        style: AppStyle.txtArialBoldMT20,
+                        style: AppStyle.txtArialBoldMT15,
                       ),
                       Spacer(),
                       Padding(

@@ -16,6 +16,10 @@ class AppDecoration {
   static BoxDecoration get fillGray900 => BoxDecoration(
         color: ColorConstant.gray900,
       );
+  static BoxDecoration get fillGrayBottomButton => BoxDecoration(
+        color: Color.fromARGB(255, 12, 47, 14),
+      );
+
   static BoxDecoration get outlineGray5002 => BoxDecoration(
         color: ColorConstant.whiteA700,
         border: Border.all(
@@ -64,6 +68,15 @@ class AppDecoration {
   static BoxDecoration get fillGray90001 => BoxDecoration(
         color: ColorConstant.gray90001,
       );
+
+  static BoxDecoration get outlineBluegray900 => BoxDecoration(
+        border: Border.all(
+          color: ColorConstant.blueGray900,
+          width: getHorizontalSize(
+            1,
+          ),
+        ),
+      );
 }
 
 class BorderRadiusStyle {
@@ -74,26 +87,20 @@ class BorderRadiusStyle {
   );
 
   static BorderRadius roundedBorder10 = BorderRadius.circular(
-    getHorizontalSize(
-      10,
-    ),
+    getHorizontalSize(10),
   );
 }
 
-// Comment/Uncomment the below code based on your Flutter SDK version.
-
-// For Flutter SDK Version 3.7.2 or greater.
+// class BorderRadiusStyle {
+//   static BorderRadius roundedBorder10 = BorderRadius.circular(
+//     getHorizontalSize(
+//       10,
+//     ),
+//   );
+// }
 
 double get strokeAlignInside => BorderSide.strokeAlignInside;
 
 double get strokeAlignCenter => BorderSide.strokeAlignCenter;
 
 double get strokeAlignOutside => BorderSide.strokeAlignOutside;
-
-// For Flutter SDK Version 3.7.1 or less.
-
-// StrokeAlign get strokeAlignInside => StrokeAlign.inside;
-//
-// StrokeAlign get strokeAlignCenter => StrokeAlign.center;
-//
-// StrokeAlign get strokeAlignOutside => StrokeAlign.outside;

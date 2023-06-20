@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otc_aggritech/core/app_export.dart';
-import 'package:otc_aggritech/widgets/custom_button.dart';
-
+import 'package:http/http.dart' as http;
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -178,21 +177,81 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ),
-        bottomNavigationBar: CustomButton(
-          height: getVerticalSize(57),
-          text: "Login",
-          onTap: () {
-            onTapLogin(context);
-          },
+        bottomNavigationBar: Container(
+          decoration: AppDecoration.fillGrayBottomButton,
+          padding: EdgeInsets.symmetric(vertical: 5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: () {
+                  onTapLogin(context);
+                },
+                child: Text(
+                  "Login",
+                  style: AppStyle.txtArialBoldMT24WhiteA700,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  onTapLogin(BuildContext context) {
-    Navigator.pushNamed(
-      context,
-      AppRoutes.farmerSearchScreen,
-    );
+  void onTapLogin(BuildContext context) async {
+    final mobileNumber =
+        "YOUR_MOBILE_NUMBER"; // Replace with the actual mobile number entered by the user
+    final password =
+        "YOUR_PASSWORD"; // Replace with the actual password entered by the user
+
+    final url =
+        "YOUR_LOGIN_API_ENDPOINT"; // Replace with your actual login API endpoint
+
+    // final response = await http.post(
+    //   Uri.parse(url),
+    //   body: {
+    //     "mobile_number": mobileNumber,
+    //     "password": password,
+    //   },
+    // );
+    // response.statusCode == 200||
+
+    if (0 == 0) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Login!"),
+          content: Text("Login Sucessfully"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                  Navigator.pop(context);
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.farmerSearchScreen,
+                );
+              },
+              child: Text("OK"),
+            ),
+          ],
+        ),
+      );
+    } else {
+      // Login failed, show an error message
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Login Failed"),
+          content: Text("Please check your credentials and try again."),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text("OK"),
+            ),
+          ],
+        ),
+      );
+    }
   }
 }

@@ -1,3 +1,7 @@
+import 'package:otc_aggritech/presentation/app_navigation_screen/app_bar_navigation.dart';
+import 'package:otc_aggritech/presentation/farmer_add_screen/farmer_add_screen.dart';
+import 'package:otc_aggritech/presentation/side_bar_navigation_draweritem/side_bar_navigation_draweritem.dart';
+
 import '../farmer_search_screen/widgets/farmer_search_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:otc_aggritech/core/app_export.dart';
@@ -31,96 +35,8 @@ class _FarmerSearchScreenState extends State<FarmerSearchScreen> {
       child: Scaffold(
         backgroundColor: ColorConstant.whiteA700,
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 12, 47, 14),
-          elevation: 0,
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                icon: Icon(Icons.menu),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              );
-            },
-          ),
-        ),
-        drawer: Drawer(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                child: DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                          'Akshay Surykant Gaikwad',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        '422601',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  children: <Widget>[
-                    ListTile(
-                      title: SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            // Handle logout functionality
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 12, 47, 14),
-                          ),
-                          child: Text(
-                            'Logout',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    // Add more ListTile widgets for additional drawer items
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                alignment: Alignment.center,
-                child: Text(
-                  'Version 1.0.0',
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+        appBar: AppBarNavigation(),
+        drawer: SideBarNavigationDraweritem(),
         body: Form(
           key: _formKey,
           child: Container(
@@ -184,7 +100,12 @@ class _FarmerSearchScreenState extends State<FarmerSearchScreen> {
                             },
                             itemCount: 7,
                             itemBuilder: (context, index) {
-                              return FarmerSearchItemWidget();
+                              return GestureDetector(
+                                onTap: () {
+                                  openCropCycleApp(context);
+                                },
+                                child: FarmerSearchItemWidget(),
+                              );
                             },
                           ),
                         ],
@@ -198,7 +119,7 @@ class _FarmerSearchScreenState extends State<FarmerSearchScreen> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            // Add button functionality here
+            openFarmerAddScreen(context);
           },
           child: Icon(Icons.add),
           backgroundColor: Color.fromARGB(255, 12, 47, 14),
@@ -206,5 +127,13 @@ class _FarmerSearchScreenState extends State<FarmerSearchScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.endContained,
       ),
     );
+  }
+
+  void openCropCycleApp(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.farmerDetailCropCycleScreen);
+  }
+
+  void openFarmerAddScreen(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.farmerAddPageScreen);
   }
 }

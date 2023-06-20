@@ -1,20 +1,22 @@
 name: otc_aggritech
 description: A new Flutter project.
 version: 1.0.0+1
-environment: 
+environment:
   sdk: '>=2.12.0 <3.0.0'
-dependencies: 
-  flutter: 
+dependencies:
+  flutter:
     sdk: flutter
   provider: ^6.0.5
   cached_network_image: ^3.2.1
   flutter_svg: ^1.1.6
   intl: ^0.17.0
-dev_dependencies: 
-  flutter_test: 
+  url_launcher: ^6.0.0
+  http: ^0.13.6
+dev_dependencies:
+  flutter_test:
     sdk: flutter
-flutter: 
+flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - assets/
     - assets/images/

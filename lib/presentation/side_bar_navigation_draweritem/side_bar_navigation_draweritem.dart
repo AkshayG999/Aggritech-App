@@ -9,90 +9,79 @@ class SideBarNavigationDraweritem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-        width: getHorizontalSize(
-          256,
-        ),
-        padding: getPadding(
-          top: 10,
-          bottom: 10,
-        ),
-        decoration: AppDecoration.outlineGray5002,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            CustomImageView(
-              imagePath: ImageConstant.imgCloseicon471,
-              height: getSize(
-                28,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            child: DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.white,
               ),
-              width: getSize(
-                28,
-              ),
-              alignment: Alignment.centerRight,
-              margin: getMargin(
-                right: 13,
-              ),
-            ),
-            Container(
-              width: getHorizontalSize(
-                163,
-              ),
-              margin: getMargin(
-                left: 16,
-                top: 51,
-              ),
-              child: Text(
-                "Akshay Surykant\nGaikwad",
-                maxLines: null,
-                textAlign: TextAlign.left,
-                style: AppStyle.txtArialBoldMT20Black900,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 20),
+                    child: Text(
+                      'Akshay Surykant Gaikwad',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '422601',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
               ),
             ),
-            Padding(
-              padding: getPadding(
-                left: 16,
-                top: 4,
-              ),
-              child: Text(
-                "422601",
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.left,
-                style: AppStyle.txtArialBoldMT16,
-              ),
-            ),
-            CustomTextFormField(
-              focusNode: FocusNode(),
-              autofocus: true,
-              controller: grouptwentytwoController,
-              hintText: " Logout",
-              margin: getMargin(
-                top: 51,
-              ),
-              variant: TextFormFieldVariant.FillGray900,
-              padding: TextFormFieldPadding.PaddingAll7,
-              fontStyle: TextFormFieldFontStyle.ArialBoldMT20,
-              textInputAction: TextInputAction.done,
-            ),
-            Spacer(),
-            Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: getPadding(
-                  bottom: 6,
+          ),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                ListTile(
+                  title: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Handle logout functionality
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 12, 47, 14),
+                      ),
+                      child: Text(
+                        'Logout',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-                child: Text(
-                  "Version 0.0.1",
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.left,
-                  style: AppStyle.txtArialMT14,
-                ),
+                // Add more ListTile widgets for additional drawer items
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(16),
+            alignment: Alignment.center,
+            child: Text(
+              'Version 1.0.0',
+              style: TextStyle(
+                color: Colors.grey,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
