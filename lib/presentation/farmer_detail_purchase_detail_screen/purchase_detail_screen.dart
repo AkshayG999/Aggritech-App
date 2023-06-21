@@ -1,6 +1,5 @@
 import 'package:otc_aggritech/presentation/app_navigation_screen/app_bar_navigation.dart';
 import 'package:otc_aggritech/presentation/app_navigation_screen/app_bottom_bar_navigation.dart';
-import 'package:otc_aggritech/presentation/farmer_detail_crop_cycle_screen/crop_cycle_screen.dart';
 import 'package:otc_aggritech/presentation/farmer_detail_purchase_detail_screen/widgets/purchase_data.dart';
 import 'package:flutter/material.dart';
 import 'package:otc_aggritech/core/app_export.dart';
@@ -43,7 +42,7 @@ class _PurchaseDetailScreenState extends State<PurchaseDetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(
-                    'assets/images/img_locationpinimagepng.png',
+                     ImageConstant.imgLocationpinimagepng,
                     height: 22,
                     width: 17,
                   ),
@@ -70,7 +69,7 @@ class _PurchaseDetailScreenState extends State<PurchaseDetailScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Image.asset(
-                      'assets/images/img_pngtransparentmobilephones.png',
+                       ImageConstant.imgPngtransparentmobilephones,
                       height: 15,
                       width: 14,
                     ),

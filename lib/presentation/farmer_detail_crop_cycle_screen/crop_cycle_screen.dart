@@ -1,3 +1,4 @@
+import 'package:otc_aggritech/core/app_export.dart';
 import 'package:otc_aggritech/presentation/app_navigation_screen/app_bar_navigation.dart';
 import 'package:otc_aggritech/presentation/app_navigation_screen/app_bottom_bar_navigation.dart';
 import 'package:otc_aggritech/presentation/farmer_detail_crop_cycle_screen/widgets/crop_cycle_data.dart';
@@ -43,7 +44,7 @@ class _CropCycleScreenState extends State<CropCycleScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(
-                    'assets/images/img_locationpinimagepng.png',
+                     ImageConstant.imgLocationpinimagepng,
                     height: 22,
                     width: 17,
                   ),
@@ -70,7 +71,7 @@ class _CropCycleScreenState extends State<CropCycleScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Image.asset(
-                      'assets/images/img_pngtransparentmobilephones.png',
+                      ImageConstant.imgPngtransparentmobilephones,
                       height: 15,
                       width: 14,
                     ),

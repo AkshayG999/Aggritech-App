@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:otc_aggritech/core/app_export.dart';
-import 'package:otc_aggritech/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
 class SideBarNavigationDraweritem extends StatelessWidget {
